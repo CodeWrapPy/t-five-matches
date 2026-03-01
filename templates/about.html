@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="about-hero reveal">
+    <div class="hero-overlay">
+        <p class="tagline">Our Heritage</p>
+        <h1>Three Generations of Matchbox Excellence</h1>
+        <p class="desc">The story behind Harichand Totaldas and the birth of T-Five Matches.</p>
+    </div>
+</section>
+
+<section class="history-section">
+    <div class="container">
+        <div class="history-content reveal">
+            <div class="history-text">
+                <h2>A Legacy Built on Quality & Trust</h2>
+                <p>Founded by Harichand Totaldas, our company began as a small family workshop dedicated to the craft of matchstick making. Over three generations, that modest operation has evolved into a full-scale manufacturing powerhouse.</p>
+                <p>Today, T-Five Matches is synonymous with reliability. We specialize in custom-branded matchbox manufacturing, helping businesses worldwide illuminate their own brand identity with precision and care.</p>
+            </div>
+            <div class="history-image">
+                <img src="{{ url_for('static', filename='images/heritage-factory.jpg') }}" alt="Legacy Factory View">
+                <span class="est-badge">Est. Since Generations</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="values-section">
+    <div class="section-title reveal">
+        <p class="subtitle">OUR GUIDING PRINCIPLES</p>
+        <h2>What We Stand For</h2>
+    </div>
+    <div class="values-grid reveal">
+        <div class="value-item">
+            <div class="value-icon">🏆</div>
+            <h3>Quality First</h3>
+            <p>Every matchbox undergoes strict quality checks before leaving our factory floor.</p>
+        </div>
+        <div class="value-item">
+            <div class="value-icon">🤝</div>
+            <h3>Client-Centric</h3>
+            <p>We work closely with over 500 B2B partners to deliver exactly what their brand needs.</p>
+        </div>
+        <div class="value-item">
+            <div class="value-icon">🌿</div>
+            <h3>Eco-Conscious</h3>
+            <p>Sustainably sourced wood and eco-friendly manufacturing processes are at our core.</p>
+        </div>
+        <div class="value-item">
+            <div class="value-icon">✅</div>
+            <h3>ISI Certified</h3>
+            <p>All our products meet the highest Indian Standards for safety and reliability.</p>
+        </div>
+    </div>
+</section>
+
+<section class="about-stats reveal">
+    <div class="stat-box">
+        <h3>10M+</h3>
+        <p>Boxes Produced Yearly</p>
+    </div>
+    <div class="stat-box">
+        <h3>500+</h3>
+        <p>Distributors Worldwide</p>
+    </div>
+    <div class="stat-box">
+        <h3>3 Gen</h3>
+        <p>Family Leadership</p>
+    </div>
+</section>
+
+{% endblock %}

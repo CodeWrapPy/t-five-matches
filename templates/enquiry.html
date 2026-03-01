@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="contact-hero reveal">
+  <div class="container">
+    <h1>Contact Us</h1>
+    <p>Reach out for bulk orders, custom branding, or any inquiries regarding our matchbox range.</p>
+  </div>
+</section>
+
+<section class="contact-section">
+  <div class="contact-container">
+    
+    <div class="contact-info reveal">
+      <div class="info-group">
+        <h3>Get in Touch</h3>
+        <p>Fill out the form and our team will be with you via WhatsApp for the fastest response.</p>
+      </div>
+
+      <div class="info-item">
+        <span class="icon">📱</span>
+        <div>
+          <h4>WhatsApp</h4>
+          <p><a href="https://wa.me/919898023886?text=Enquiry%20about%20matchbox" target="_blank">+91 98980 23886</a></p>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <span class="icon">✉️</span>
+        <div>
+          <h4>Email Address</h4>
+          <p>info@tfivematches.com</p>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <span class="icon">📍</span>
+        <div>
+          <h4>Shop Address</h4>
+          <p>Karanpara 37, Behind S.T. Bus Station, Rajkot, Gujarat 360001</p>
+          <div class="small-map-wrapper">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.670831620021!2d70.80018867595671!3d22.29051644315264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3959bcacc74b760b%3A0x1905d1df6d757b7e!2sHarichand%20Totaldas%20%5B%20T-FIVE%20MATCHES%20%5D!5e0!3m2!1sen!2sin!4v1708700000000!5m2!1sen!2sin" 
+                width="100%" 
+                height="180" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+          <a href="https://www.google.com/maps/dir//Harichand+Totaldas+%5B+T-FIVE+MATCHES+%5D+Karanpara+37+Behind+S.T.+Bus+Station+Rajkot+Gujarat+360001" 
+            target="_blank" 
+            class="btn-directions">
+            Get Directions →
+          </a>
+          <a href="tel:+919898023886" class="btn-call">
+           Call Now 📞
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form-card reveal" style="transition-delay: 0.2s;">
+      <form method="POST" action="{{ url_for('enquiry') }}">
+        <div class="form-grid">
+          <div class="input-group">
+            <label>Your Name *</label>
+            <input type="text" name="name" placeholder="Full name" required>
+          </div>
+          <div class="input-group">
+            <label>Company Name</label>
+            <input type="text" name="company" placeholder="Your company">
+          </div>
+          <div class="input-group">
+            <label>Phone Number *</label>
+            <input type="tel" name="phone" placeholder="+91 XXXXX XXXXX" required>
+          </div>
+          <div class="input-group">
+            <label>Email Address</label>
+            <input type="email" name="email" placeholder="email@company.com">
+          </div>
+          <div class="input-group full-width">
+            <label>Your Message *</label>
+            <textarea name="message" placeholder="Tell us about your requirements — quantity, custom branding needs, etc." required></textarea>
+          </div>
+        </div>
+        
+        <button type="submit" class="btn-send-whatsapp">
+          Send Enquiry via Mail <span>→</span>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

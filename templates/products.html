@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="products-hero reveal">
+  <p class="subtitle">OUR RANGE</p>
+  <h1>Premium Matchbox Solutions</h1>
+  <p class="desc">From classic safety matches to custom-branded packaging — we manufacture it all with consistent quality for our B2B partners.</p>
+</section>
+
+<section class="products-grid-container">
+  <div class="product-catalog">
+    
+    <div class="product-item reveal">
+      <div class="product-img-wrapper">
+        <span class="product-badge">Standard</span>
+        <img src="{{ url_for('static', filename='images/hero-bg-matchbox.png') }}" alt="T-Five Classic">
+      </div>
+      <div class="product-info">
+        <h3>T-Five Classic Safety Match</h3>
+        <p>Our flagship product — reliable, affordable, and trusted by millions. Available in packs of 10, 20, and bulk cartons.</p>
+        <ul class="spec-list">
+          <li>40 sticks per box</li>
+          <li>Safety tip</li>
+          <li>ISI Certified</li>
+        </ul>
+        <a href="{{ url_for('enquiry') }}" class="btn-product-enquiry">Enquire Now</a>
+      </div>
+    </div>
+
+    <div class="product-item reveal" style="transition-delay: 0.1s;">
+      <div class="product-img-wrapper">
+        <span class="product-badge premium">Premium</span>
+        <img src="{{ url_for('static', filename='images/lal.webp') }}" alt="Premium Wooden Matches">
+      </div>
+      <div class="product-info">
+        <h3>Premium Wooden Matchbox</h3>
+        <p>Elegant wooden matchboxes with gold foil branding for premium occasions. Perfect for restaurants, hotels, and premium gifting.</p>
+        <ul class="spec-list">
+          <li>Wooden casing</li>
+          <li>Custom foil print</li>
+          <li>MOQ: 500 units</li>
+        </ul>
+        <a href="{{ url_for('enquiry') }}" class="btn-product-enquiry">Enquire Now</a>
+      </div>
+    </div>
+
+    <div class="product-item reveal" style="transition-delay: 0.2s;">
+      <div class="product-img-wrapper">
+        <span class="product-badge b2b">B2B</span>
+        <img src="{{ url_for('static', filename='images/labham.webp') }}" alt="Custom Branded Matchbox">
+      </div>
+      <div class="product-info">
+        <h3>Custom Branded Matchboxes</h3>
+        <p>Get matchboxes manufactured with your own brand identity. Full-color printing on high-quality cardboard.</p>
+        <ul class="spec-list">
+          <li>Private label</li>
+          <li>Full color print</li>
+          <li>MOQ: 10,000 units</li>
+        </ul>
+        <a href="{{ url_for('enquiry') }}" class="btn-product-enquiry">Enquire Now</a>
+      </div>
+    </div>
+
+    <div class="product-item reveal" style="transition-delay: 0.3s;">
+      <div class="product-img-wrapper">
+        <span class="product-badge popular">Popular</span>
+        <img src="{{ url_for('static', filename='images/opener.webp') }}" alt="Kitchen Safety Matches">
+      </div>
+      <div class="product-info">
+        <h3>Kitchen Safety Matches</h3>
+        <p>Extra-long matches designed for kitchen use. Safe, long-burn time, and reliable for household use.</p>
+        <ul class="spec-list">
+          <li>Extra long sticks</li>
+          <li>70mm length</li>
+          <li>Safe grip</li>
+        </ul>
+        <a href="{{ url_for('enquiry') }}" class="btn-product-enquiry">Enquire Now</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}
