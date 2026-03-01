@@ -1,8 +1,19 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, session
 from flask_mail import Mail, Message
+import os
+from flask import Flask, render_template
 
 app = Flask(__name__)
-app.secret_key = "super_secret_heritage_key" 
+app.secret_key = os.environ.get('SECRET_KEY', 'default-key-for-local') 
+
+# --- Production Mail Configuration ---
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USE_TLS'] = True
+# These lines pull your private info from Render's settings
+app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME')
+app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD')
+app.config['MAIL_DEFAULT_SENDER'] = ('T-Five Matches', os.environ.get('MAIL_USERNAME'))
 
 # --- Flask-Mail Configuration ---
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
