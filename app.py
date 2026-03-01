@@ -4,7 +4,7 @@ import os
 from flask import Flask, render_template
 
 app = Flask(__name__)
-app.secret_key = os.environ.get('SECRET_KEY', 'default-key-for-local') 
+app.secret_key = os.environ.get('SECRET_KEY', '4f7a2b9e1c8d3f5a6b0e9d8c7b6a5f4e') 
 
 # --- Production Mail Configuration ---
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
