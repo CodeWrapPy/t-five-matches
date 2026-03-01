@@ -8,8 +8,9 @@ app.secret_key = os.environ.get('SECRET_KEY', '4f7a2b9e1c8d3f5a6b0e9d8c7b6a5f4e'
 
 # --- Production Mail Configuration ---
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
-app.config['MAIL_PORT'] = 587
-app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_PORT'] = 465
+app.config['MAIL_USE_TLS'] = False
+app.config['MAIL_USE_SSL'] = True
 # These lines pull your private info from Render's settings
 app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME')
 app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD')
@@ -17,8 +18,9 @@ app.config['MAIL_DEFAULT_SENDER'] = ('T-Five Matches', os.environ.get('MAIL_USER
 
 # --- Flask-Mail Configuration ---
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
-app.config['MAIL_PORT'] = 587
-app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_PORT'] = 465
+app.config['MAIL_USE_TLS'] = False
+app.config['MAIL_USE_SSL'] = True
 app.config['MAIL_USERNAME'] = 'newht.enquiry@gmail.com'  # Replace with your email
 app.config['MAIL_PASSWORD'] = 'wdzp atmv nxra sgox'     # Replace with your Gmail App Password
 app.config['MAIL_DEFAULT_SENDER'] = 'newht.enquiry@gmail.com'
