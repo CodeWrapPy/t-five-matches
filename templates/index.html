@@ -37,7 +37,8 @@
 
 <section style="padding: 100px 8%; display: flex; align-items: center; gap: 80px; flex-wrap: wrap;">
     <div style="flex: 1; min-width: 300px;" class="reveal">
-        <img src="{{ url_for('static', filename='static/images/ourbrand_bg.png') }}" style="width: 100%; border-radius: 8px;">
+        <!-- FIXED: was 'static/static/images/...' which caused broken images on Render -->
+        <img src="{{ url_for('static', filename='images/ourbrand_bg.png') }}" style="width: 100%; border-radius: 8px;" alt="Our Brand">
     </div>
     <div style="flex: 1.2; min-width: 300px;" class="reveal">
         <h3 style="color: var(--accent-gold); margin-bottom: 5px; font-weight: 600;">OUR STORY</h3>
