@@ -99,4 +99,4 @@ def health():
     return {"status": "ok"}, 200
 
 if __name__ == "__main__":
-    app.run(debug=False)
+    app.run
