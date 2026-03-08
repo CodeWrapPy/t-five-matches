@@ -2,8 +2,6 @@ from flask import Flask, render_template, request, redirect, url_for, flash, ses
 from flask_mail import Mail, Message
 import os
 import threading
-from dotenv import load_dotenv
-load_dotenv()
 
 app = Flask(__name__)
 app.secret_key = os.environ.get('SECRET_KEY', '4f7a2b9e1c8d3f5a6b0e9d8c7b6a5f4e')
@@ -99,4 +97,4 @@ def health():
     return {"status": "ok"}, 200
 
 if __name__ == "__main__":
-    app.run
+    app.run(debug=False)
