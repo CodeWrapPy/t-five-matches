@@ -1,56 +1,59 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const header = document.querySelector("header");
-    const navLinks = document.querySelectorAll("nav a");
-    const revealElements = document.querySelectorAll(".reveal, .stat-item, .service-card, .card");
+    const header    = document.querySelector("header");
+    const mobileNav = document.getElementById("mobile-nav");
+    const hamburger = document.querySelector(".hamburger");
+    const overlay   = document.querySelector(".nav-overlay");
+    const allLinks  = document.querySelectorAll("#desktop-nav a, #mobile-nav a");
 
-    // --- 1. Dynamic Header Logic ---
-    const handleHeader = () => {
-        // Adds 'scrolled' class after 50px of scrolling for the shrink effect
-        if (window.scrollY > 50) {
-            header.classList.add("scrolled");
-        } else {
-            header.classList.remove("scrolled");
-        }
-    };
+    // ── 1. Sticky Header ──────────────────────────────────────
+    window.addEventListener("scroll", () => {
+        header.classList.toggle("scrolled", window.scrollY > 50);
+    });
+    header.classList.toggle("scrolled", window.scrollY > 50);
 
-    // --- 2. Scroll-Reveal Logic (Intersection Observer) ---
-    const revealOptions = {
-        threshold: 0.15, // Element must be 15% visible to trigger
-        rootMargin: "0px 0px -50px 0px"
-    };
+    // ── 2. Hamburger Menu ─────────────────────────────────────
+    function openNav() {
+        mobileNav.classList.add("open");
+        hamburger.classList.add("open");
+        overlay.classList.add("open");
+        document.body.style.overflow = "hidden";
+    }
 
-    const revealObserver = new IntersectionObserver((entries, observer) => {
+    function closeNav() {
+        mobileNav.classList.remove("open");
+        hamburger.classList.remove("open");
+        overlay.classList.remove("open");
+        document.body.style.overflow = "";
+    }
+
+    if (hamburger) {
+        hamburger.addEventListener("click", () => {
+            mobileNav.classList.contains("open") ? closeNav() : openNav();
+        });
+    }
+
+    if (overlay) overlay.addEventListener("click", closeNav);
+
+    // ── 3. Scroll Reveal ─────────────────────────────────────
+    const revealEls = document.querySelectorAll(".reveal, .stat-item");
+    const observer  = new IntersectionObserver((entries, obs) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add("active");
-                // Stop observing once the animation has played
-                observer.unobserve(entry.target);
+                obs.unobserve(entry.target);
             }
         });
-    }, revealOptions);
+    }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
 
-    // --- 3. Auto-Highlight Active Nav Link ---
-    const setActiveLink = () => {
-        const currentPath = window.location.pathname;
-        navLinks.forEach(link => {
-            // Remove active class from all
-            link.classList.remove("active");
-            // Add to the one matching the current URL
-            if (link.getAttribute("href") === currentPath || 
-                (currentPath === "/" && link.getAttribute("href").includes("home"))) {
-                link.classList.add("active");
-            }
-        });
-    };
+    revealEls.forEach(el => observer.observe(el));
 
-    // --- Initialize ---
-    // Start observing elements for scroll animations
-    revealElements.forEach(el => revealObserver.observe(el));
-
-    // Listen for scroll events for the dynamic header
-    window.addEventListener("scroll", handleHeader);
-
-    // Initial checks on page load
-    handleHeader();
-    setActiveLink();
+    // ── 4. Highlight active nav link ─────────────────────────
+    const path = window.location.pathname;
+    allLinks.forEach(link => {
+        link.classList.remove("active");
+        const href = link.getAttribute("href");
+        if (href === path || (path === "/" && href && href.includes("home"))) {
+            link.classList.add("active");
+        }
+    });
 });

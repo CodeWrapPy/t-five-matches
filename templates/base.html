@@ -9,6 +9,16 @@
 </head>
 <body>
 
+<!-- Mobile nav drawer — OUTSIDE header so it's not clipped by header's stacking context -->
+<div class="nav-overlay"></div>
+<nav id="mobile-nav">
+  <a href="{{ url_for('home') }}">Home</a>
+  <a href="{{ url_for('products') }}">Products</a>
+  <a href="{{ url_for('about') }}">About</a>
+  <a href="{{ url_for('enquiry') }}">Contact</a>
+  <a href="{{ url_for('enquiry') }}" class="btn-get-quote">Get a Quote</a>
+</nav>
+
 <header>
   <div class="logo-group">
     <div class="logo-text">
@@ -16,18 +26,34 @@
       <span>T-Five Matches</span>
     </div>
   </div>
-  <nav>
-    <a href="{{ url_for('home') }}" class="active">Home</a>
+
+  <!-- Desktop nav — stays inside header -->
+  <nav id="desktop-nav">
+    <a href="{{ url_for('home') }}">Home</a>
     <a href="{{ url_for('products') }}">Products</a>
     <a href="{{ url_for('about') }}">About</a>
     <a href="{{ url_for('enquiry') }}">Contact</a>
     <a href="{{ url_for('enquiry') }}" class="btn-get-quote">Get a Quote</a>
   </nav>
+
+  <!-- Hamburger (mobile only) -->
+  <button class="hamburger" aria-label="Toggle menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 </header>
 
 <main>
   {% block content %}{% endblock %}
 </main>
+
+<footer>
+  <p>© 2024 Harichand Totaldas — T-Five Matches. All rights reserved.
+    &nbsp;|&nbsp; <a href="https://wa.me/919898023886">WhatsApp</a>
+    &nbsp;|&nbsp; Rajkot, Gujarat, India
+  </p>
+</footer>
 
 <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
 </body>

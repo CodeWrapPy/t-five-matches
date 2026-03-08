@@ -1,26 +1,25 @@
 {% extends "base.html" %}
 {% block content %}
 
-<section class="about-hero reveal">
-    <div class="hero-overlay">
-        <p class="tagline">Our Heritage</p>
-        <h1>Three Generations of Matchbox Excellence</h1>
-        <p class="desc">The story behind Harichand Totaldas and the birth of T-Five Matches.</p>
-    </div>
+<section class="about-hero">
+    <p class="tagline">Our Heritage</p>
+    <h1>Three Generations of Matchbox Excellence</h1>
+    <p class="desc">The story behind Harichand Totaldas and the birth of T-Five Matches.</p>
 </section>
 
 <section class="history-section">
-    <div class="container">
-        <div class="history-content reveal">
-            <div class="history-text">
-                <h2>A Legacy Built on Quality & Trust</h2>
-                <p>Founded by Harichand Totaldas, our company began as a small family workshop dedicated to the craft of matchstick making. Over three generations, that modest operation has evolved into a full-scale manufacturing powerhouse.</p>
-                <p>Today, T-Five Matches is synonymous with reliability. We specialize in custom-branded matchbox manufacturing, helping businesses worldwide illuminate their own brand identity with precision and care.</p>
-            </div>
-            <div class="history-image">
-                <img src="{{ url_for('static', filename='images/heritage-factory.jpg') }}" alt="Legacy Factory View">
-                <span class="est-badge">Est. Since Generations</span>
-            </div>
+    <div class="history-content reveal">
+        <div class="history-text">
+            <h2>A Legacy Built on Quality & Trust</h2>
+            <p>Founded by Harichand Totaldas, our company began as a small family workshop dedicated to the craft of matchstick making. Over three generations, that modest operation has evolved into a full-scale manufacturing powerhouse.</p>
+            <p>Today, T-Five Matches is synonymous with reliability. We specialize in custom-branded matchbox manufacturing, helping businesses worldwide illuminate their own brand identity with precision and care.</p>
+        </div>
+        <div class="history-image">
+            <!-- FIXED: heritage-factory.jpg does NOT exist in your repo.
+                 Using ourbrand.jpeg which IS in your static/Images folder. 
+                 If you want to use heritage-factory.jpg, add that file to static/Images/ -->
+            <img src="{{ url_for('static', filename='Images/ourbrand.jpeg') }}" alt="Our Heritage">
+            <span class="est-badge">Est. Since Generations</span>
         </div>
     </div>
 </section>
@@ -55,18 +54,9 @@
 </section>
 
 <section class="about-stats reveal">
-    <div class="stat-box">
-        <h3>10M+</h3>
-        <p>Boxes Produced Yearly</p>
-    </div>
-    <div class="stat-box">
-        <h3>500+</h3>
-        <p>Distributors Worldwide</p>
-    </div>
-    <div class="stat-box">
-        <h3>3 Gen</h3>
-        <p>Family Leadership</p>
-    </div>
+    <div class="stat-box"><h3>10M+</h3><p>Boxes Produced Yearly</p></div>
+    <div class="stat-box"><h3>500+</h3><p>Distributors Worldwide</p></div>
+    <div class="stat-box"><h3>3 Gen</h3><p>Family Leadership</p></div>
 </section>
 
 {% endblock %}
